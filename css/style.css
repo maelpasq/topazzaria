@@ -1,0 +1,547 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+:root {
+  --color-primary: #FF2E00;
+  --color-secondary: linear-gradient(to bottom right, #FF5C00, #FF2E00);
+  --color-light: #F6F6F6;
+  --color-dark: #3F3F3F;
+
+  --font: 'Righteous', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font);
+  color: var(--color-light);
+}
+
+body, html {
+  scroll-behavior: smooth;
+  background: var(--color-dark);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-light);
+}
+
+::-webkit-scrollbar {
+  background: var(--color-dark);
+  width: .5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-secondary);
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+/* HEADER */
+header {
+  width: 100%;
+  height: 100vh;
+}
+
+header #navbar {
+  z-index: 999;
+  position: fixed;
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  transition: all 300ms ease;
+}
+
+header #navbar .content {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+header #navbar .content .logo {
+  width: 2rem;
+  display: none;
+}
+
+header #navbar .content .logo-long {
+  width: 12rem;
+}
+
+header #navbar .content .menu {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+
+header #navbar .content .menu .item a {
+  font-size: 1.5rem;
+  font-weight: lighter;
+  transition: all 300ms ease;
+}
+
+header #navbar .content .menu .item.active a {
+  color: var(--color-primary);
+  background: #ffffff1d;
+  padding: 0.5rem 2rem;
+  border-radius: 50px;
+}
+
+header #navbar .content .menu .item a:hover {
+  color: var(--color-primary);
+}
+
+header #navbar .log-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+
+header #navbar .log-box .login {
+  font-size: 1.2rem;
+  transition: all 300ms ease;
+}
+
+header #navbar .log-box .login:hover {
+  color: var(--color-primary);
+}
+
+header #navbar .log-box .signup {
+  color: var(--color-light);
+  font-size: 1.5rem;
+  background: var(--color-secondary);
+  padding: 0.5rem 2rem;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  transition: all 300ms ease;
+}
+
+header #navbar .log-box .signup:hover {
+  box-shadow: 0 20px 50px 0 var(--color-primary);
+  border-radius: 50px;
+  transform: translateY(-5px);
+}
+
+header #navbar .log-box .account-access {
+  font-size: 2rem;
+  display: none;
+  align-items: center;
+  gap: 1rem;
+}
+
+header #navbar .log-box .account-access img {
+  width: 2.5rem;
+}
+
+header #navbar .log-box .account-access:hover img {
+  display: none;
+}
+
+header #navbar .log-box .account-access img:nth-child(2) {
+  display: none;
+}
+
+header #navbar .log-box .account-access:hover img:nth-child(2) {
+  display: flex;
+}
+
+header #navbar .log-box .account-access span {
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: all 300ms ease;
+}
+
+header #navbar .log-box .account-access:hover span {
+  font-size: 1.2rem;
+  opacity: 1;
+  transition: all 300ms ease;
+}
+
+/* scroll-active */
+header #navbar.scroll-active {
+  background: var(--color-dark);
+  height: 4rem;
+}
+
+header #navbar.scroll-active .log-box .account-access {
+  display: flex;
+}
+header #navbar.scroll-active .log-box .login,
+header #navbar.scroll-active .log-box .signup {
+  display: none;
+}
+
+/* HERO-BANNER */
+header .hero-banner {
+  width: 100%;
+  height: 100vh;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+}
+
+header .hero-banner .left {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+header .hero-banner .left .title {
+  font-weight: lighter;
+  font-size: 4rem;
+  line-height: 1;
+  background: var(--color-secondary);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+header .hero-banner .left .subtitle {
+  font-weight: lighter;
+  font-size: 1.5rem;
+}
+
+header .hero-banner .left .play-cta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--color-light);
+  font-size: 2rem;
+  background: var(--color-secondary);
+  padding: 0.5rem 2rem;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  transition: all 300ms ease;
+}
+
+header .hero-banner .left .play-cta:hover {
+  box-shadow: 0 20px 50px 0 var(--color-primary);
+  border-radius: 50px;
+  transform: translateY(-5px);
+}
+
+header .hero-banner .right {
+  width: 100%;
+}
+
+header .hero-banner .right .link-news-home .box-news-home img {
+  width: 100%;
+  border-bottom-right-radius: 100px;
+  border-top-left-radius: 100px;
+  transition: all 300ms ease;
+}
+
+header .hero-banner .right .link-news-home:hover .box-news-home img {
+  box-shadow: 0 100px 150px -100px #ddefc0;
+  border-radius: 100px;
+  transform: translateY(-10px);
+}
+
+header .hero-banner .right .link-news-home .box-news-home video {
+  width: 100%;
+  border-bottom-right-radius: 100px;
+  border-top-left-radius: 100px;
+  transition: all 300ms ease;
+}
+
+header .hero-banner .right .link-news-home:hover .box-news-home video {
+  box-shadow: 0 100px 150px -100px #ddefc0;
+  border-radius: 100px;
+  transform: translateY(-10px);
+}
+
+/* MAIN */
+
+/* maintenance */
+.maintenance {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+}
+
+.maintenance .i-wip {
+  width: 15rem;
+}
+
+.maintenance .box-txt-wip {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.maintenance .box-txt-wip .txt-wip {
+  font-weight: lighter;
+  font-size: 4rem;
+  line-height: 1;
+  background: var(--color-secondary);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.maintenance .box-txt-wip .desc-wip {
+  font-weight: lighter;
+  font-size: 1.5rem;
+}
+
+/* maintenance modal */
+.maintenance#modal {
+  z-index: 9999;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #3f3f3fc9;
+}
+
+.maintenance#modal .modal {
+  width: 900px;
+  height: 600px;
+  background: var(--color-light);
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+.maintenance#modal .modal i {
+  color: var(--color-dark);
+  float: right;
+  font-size: 3rem;
+  padding: 1rem 2rem;
+}
+
+.maintenance#modal .modal .box-txt {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.maintenance#modal .modal .box-txt .box-txt-wip p {
+  color: var(--color-dark);
+  text-align: center;
+}
+
+/* decoration */
+main .box-img-deco {
+  width: 100%;
+  height: 20rem;
+  background-image: url(../img/supawit-oat-fin1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* FOOTER */
+
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+
+
+/* PLAY.HTML */
+.hero-banner#play {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+}
+
+.hero-banner#play .dl-img {
+  width: 15rem;
+}
+
+.hero-banner#play .box-dl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-banner#play .box-dl .title {
+  font-weight: lighter;
+  font-size: 4rem;
+  line-height: 1;
+  background: var(--color-secondary);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-banner#play .box-dl .subtitle {
+  font-weight: lighter;
+  font-size: 1.5rem;
+}
+
+.hero-banner#play .box-dl .box-dl-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.hero-banner#play .box-dl .box-dl-btn .dl-btn {
+  color: var(--color-light);
+  font-size: 2rem;
+  background: #ffffff1d;
+  padding: 0.5rem 2rem;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  transition: all 300ms ease;
+}
+
+.hero-banner#play .box-dl .box-dl-btn .dl-btn:hover {
+  box-shadow: 0 20px 50px 0 var(--color-primary);
+  border-radius: 50px;
+  transform: translateY(-5px);
+}
+
+.hero-banner#play .box-dl .box-dl-btn .dl-btn.win:hover {
+  background: #44caff;
+  box-shadow: 0 20px 50px 0 #44caff;
+  border-radius: 50px;
+  transform: translateY(-5px);
+}
+
+.hero-banner#play .box-dl .box-dl-btn .dl-btn.apple:hover {
+  background: #666666;
+  box-shadow: 0 20px 50px 0 #666666;
+  border-radius: 50px;
+  transform: translateY(-5px);
+}
+
+.hero-banner#play .box-dl .box-dl-btn .dl-btn.linux:hover {
+  background: #eac42e;
+  box-shadow: 0 20px 50px 0 #eac42e;
+  border-radius: 50px;
+  transform: translateY(-5px);
+}
+
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+
+
+/* NEWS.HTML */
+
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+
+
+/* WIKI.HTML */
+
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+
+
+/* SUPPORT.HTML */
+
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+
+
+/* MARKET.HTML */
+
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+
+
+/* LOGIN.HTML */
+
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+
+
+/* SIGNUP.HTML */
+header #navbar .log-box.active {
+  background: #ffffff1d;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  gap: 0;
+}
+
+header #navbar .log-box.active .login {
+  padding: 0.5rem 2rem;
+  font-size: 1.5rem;
+}
+
+header #navbar .log-box.active .login:hover {
+  color: var(--color-light);
+}
+
+header #navbar .log-box.active .signup {
+  background: none;
+}
+
+header #navbar .log-box.active .signup:hover {
+  box-shadow: none;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 0px;
+  transform: none;
+}
+
+header #navbar .log-box.active .active {
+  font-size: 1.5rem;
+  background: var(--color-secondary);
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+header #navbar .log-box.active .no:hover {
+  color: var(--color-primary);
+}
