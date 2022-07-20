@@ -38,6 +38,12 @@ a {
   border-bottom-right-radius: 50px;
 }
 
+@media handheld {
+  body {
+    display: none;
+  }
+}
+
 /* HEADER */
 header {
   width: 100%;
