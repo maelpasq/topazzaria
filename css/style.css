@@ -321,7 +321,7 @@ main .box-img-deco {
 }
 
 /* maintenance modal */
-.maintenance#modal {
+#modal {
   z-index: 9999;
   position: fixed;
   width: 100%;
@@ -333,32 +333,51 @@ main .box-img-deco {
   background: #3f3f3fc9;
 }
 
-.maintenance#modal .modal {
+#modal .modal-content {
   width: 900px;
-  height: 600px;
+  height: 300px;
   background: var(--color-light);
   border-top-left-radius: 100px;
   border-bottom-right-radius: 100px;
 }
 
-.maintenance#modal .modal i {
+#modal .modal-content i {
+  position: absolute;
   color: var(--color-dark);
-  float: right;
+  margin-left: 810px;
   font-size: 3rem;
   padding: 1rem 2rem;
 }
 
-.maintenance#modal .modal .box-txt {
+#modal .modal-content .txt-content {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  margin-left: 5rem;
 }
 
-.maintenance#modal .modal .box-txt .box-txt-wip p {
-  color: var(--color-dark);
-  text-align: center;
+#modal .modal-content .txt-content .title-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+
+#modal .modal-content .txt-content .title-box .i-wip {
+  width: 10rem;
+}
+
+#modal .modal-content .txt-content .title-box .txt-wip {
+  font-weight: lighter;
+  font-size: 4rem;
+  line-height: 1;
+  background: var(--color-secondary);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* FOOTER */
